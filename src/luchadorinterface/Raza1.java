@@ -78,22 +78,24 @@ public class Raza1  implements Skills, Magrase {
 
     @Override
     public int Dobleataque() {
-        System.out.println("Ataque doble...");
-        return 0;
+       int danioDobleAtaque = this.atk * 2;
+        System.out.println("Ataque doble... Daño: " + danioDobleAtaque);
+        return danioDobleAtaque;
     }
-
     @Override
     public int curar() {
-        System.out.println("Curandose...");
-        return 0;
+        int curacion = this.magia + 50;
+        this.Hp += curacion;
+        System.out.println("Curandose... Curacion: " + curacion);
+        return curacion;
     }
-
     @Override
     public int Robovida() {
-        System.out.println("Robando vida al oponente...");
-        return 0;
+         int vidaRobada = this.magia / 2;
+        this.Hp += vidaRobada;
+        System.out.println("Robando vida al oponente... Vida robada: " + vidaRobada);
+        return vidaRobada;
     }
-
     @Override
     public int Ataque() {
         System.out.println("Atacando...");
@@ -157,6 +159,7 @@ public class Raza1  implements Skills, Magrase {
             this.mostrar();
 
         }
+        
         }
 
     }

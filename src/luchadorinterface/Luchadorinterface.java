@@ -124,7 +124,17 @@ public class Luchadorinterface {
         System.out.println(" ");
     }
 
-    if (jugador1.getHp() <= 0) {
+   
+    if (jugador1.Robovida()<=100){
+        
+    }
+    if (jugador2.Dobleataque()<=90){
+        
+    }
+    if(jugador3.curar()<50){
+        
+    }
+     if (jugador1.getHp() <= 0) {
         System.out.println("Gana " + jugador2.getNombre());
     } else if (jugador2.getHp() <= 0) {
         System.out.println("Gana " + jugador1.getNombre());
@@ -133,6 +143,7 @@ public class Luchadorinterface {
     } else {
         System.out.println("Gana " + jugador1.getNombre() );
     }
+        
 
     System.out.println(" ");
     System.out.println(jugador1.getNombre() + ": " + jugador1.getHp());
@@ -154,7 +165,7 @@ public class Luchadorinterface {
                 return new Raza1("Spider man",300,40,60,15);
             }
             case 4 ->{
-                return new Raza1("Thor",350,30,43,23);
+                return new Raza1("Thor",325,30,43,23);
             }
             
             default -> {
