@@ -19,14 +19,6 @@ public class Luchadorinterface {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
 
-        
-        Raza1 Ironman = new Raza1("Iron man", 9999, 40, 40, 30);
-        Raza1 Thanos = new Raza1("Thanos", 150, 50, 30, 10);
-        
-       
-        
-      
-
         System.out.println("Luchadores listos para la pelea: ");
         System.out.println(" ");
         System.out.println("1. Iron man");
@@ -37,8 +29,6 @@ public class Luchadorinterface {
         System.out.println("Escoge tu luchador");
         int opc1 = sc.nextInt();
         Raza1 jugador1 = seleccionarLuchador(opc1);
-        
-        
 
         int opc2;
 
@@ -81,76 +71,76 @@ public class Luchadorinterface {
         Raza1 jugador3 = seleccionarLuchador(opc2);
         Raza1 jugador4 = seleccionarLuchador(opc2);
 
-       while (jugador1.getHp() > 0 && jugador2.getHp() > 0 && jugador3.getHp() > 0 && jugador4.getHp() > 0) {
-    int dl1 = (int) (Math.random() * (6 - 1 + 1)) + 1;
-    int dl2 = (int) (Math.random() * (6 - 1 + 1)) + 1;
-    int dl3 = (int) (Math.random() * (6 - 1 + 1)) + 1;
-    int dl4 = (int) (Math.random() * (6 - 1 + 1)) + 1;
+        while (jugador1.getHp() > 0 && jugador2.getHp() > 0 && jugador3.getHp() > 0 && jugador4.getHp() > 0) {
+            int dl1 = (int) (Math.random() * 10) + 1;
+            int dl2 = (int) (Math.random() * 10) + 1;
+            int dl3 = (int) (Math.random() * 10) + 1;
+            int dl4 = (int) (Math.random() * 10) + 1;
 
-    System.out.println("Tiro de dados para turno.....");
-    System.out.println("Dado luchador 1: " + dl1);
-    System.out.println("Dado luchador 2: " + dl2);
-    System.out.println("Dado luchador 3: " + dl3);
-    System.out.println("Dado luchador 4: " + dl4);
-    System.out.println(" ");
+            System.out.println("Tiro de dados para turno y para poder.....");
+            System.out.println("Dado luchador 1: " + dl1);
+            System.out.println("Dado luchador 2: " + dl2);
+            System.out.println("Dado luchador 3: " + dl3);
+            System.out.println("Dado luchador 4: " + dl4);
+            System.out.println(" ");
 
-    if (dl1 > dl2 && dl1 > dl3 && dl1 > dl4) {
-        System.out.println("Gano " + jugador1.getNombre() + " pega:");
-        System.out.println("Ataca: " + jugador1.getNombre());
-        jugador1.atacarLuchador(jugador2);
-        jugador1.atacarLuchador(jugador3);
-        jugador1.atacarLuchador(jugador4);
-        System.out.println(" ");
-    } else if (dl2 > dl1 && dl2 > dl3 && dl2 > dl4) {
-        System.out.println("Gano " + jugador2.getNombre() + " pega:");
-        System.out.println("Ataca: " + jugador2.getNombre());
-        jugador2.atacarLuchador(jugador1);
-        jugador2.atacarLuchador(jugador3);
-        jugador2.atacarLuchador(jugador4);
-        System.out.println(" ");
-    } else if (dl3 > dl1 && dl3 > dl2 && dl3 > dl4) {
-        System.out.println("Gano " + jugador3.getNombre() + " pega:");
-        System.out.println("Ataca: " + jugador3.getNombre());
-        jugador3.atacarLuchador(jugador1);
-        jugador3.atacarLuchador(jugador2);
-        jugador3.atacarLuchador(jugador4);
-        System.out.println(" ");
-    } else {
-        System.out.println("Gano " + jugador4.getNombre() + " pega:");
-        System.out.println("Ataca: " + jugador4.getNombre());
-        jugador4.atacarLuchador(jugador1);
-        jugador4.atacarLuchador(jugador2);
-        jugador4.atacarLuchador(jugador3);
-        System.out.println(" ");
-    }
+            if (dl1 > dl2 && dl1 > dl3 && dl1 > dl4) {
+                System.out.println("Gano " + jugador1.getNombre() + " pega:");
+                System.out.println("Ataca: " + jugador1.getNombre());
+                {
+                    jugador1.Dobleataque(jugador2);
+                    jugador1.curar(jugador4);
+                    jugador1.curar(jugador2);
 
-   
-    if (jugador1.Robovida()<=100){
-        
-    }
-    if (jugador2.Dobleataque()<=90){
-        
-    }
-    if(jugador3.curar()<50){
-        
-    }
-     if (jugador1.getHp() <= 0) {
-        System.out.println("Gana " + jugador2.getNombre());
-    } else if (jugador2.getHp() <= 0) {
-        System.out.println("Gana " + jugador1.getNombre());
-    } else if (jugador3.getHp() <= 0) {
-        System.out.println("Gana " + jugador1.getNombre());
-    } else {
-        System.out.println("Gana " + jugador1.getNombre() );
-    }
-        
+                }
 
-    System.out.println(" ");
-    System.out.println(jugador1.getNombre() + ": " + jugador1.getHp());
-    System.out.println(jugador2.getNombre() + ": " + jugador2.getHp());
-    System.out.println(jugador3.getNombre() + ": " + jugador3.getHp());
-    System.out.println(jugador4.getNombre() + ": " + jugador4.getHp());
-}
+                System.out.println(" ");
+            } else if (dl2 > dl1 && dl2 > dl3 && dl2 > dl4) {
+                System.out.println("Gano " + jugador2.getNombre() + " pega:");
+                System.out.println("Ataca: " + jugador2.getNombre());
+                {
+                    jugador2.Ataquehielo(jugador1);
+                }
+
+                System.out.println(" ");
+            } else if (dl3 > dl1 && dl3 > dl2 && dl3 > dl4) {
+                System.out.println("Gano " + jugador3.getNombre() + " pega:");
+                System.out.println("Ataca: " + jugador3.getNombre());
+                {
+                    jugador3.Ataquefuego(jugador2);
+                    jugador3.atacarLuchador(jugador4);
+                }
+
+                System.out.println(" ");
+
+            } else {
+                System.out.println("Gano " + jugador4.getNombre() + " pega:");
+                System.out.println("Ataca: " + jugador4.getNombre());
+                {
+                    jugador4.Robovida(jugador2);
+                    jugador4.Ataquefuego(jugador3);
+
+                }
+
+                System.out.println(" ");
+            }
+
+            if (jugador1.getHp() <= 0) {
+                System.out.println("Gana " + jugador2.getNombre());
+            } else if (jugador2.getHp() <= 0) {
+                System.out.println("Gana " + jugador1.getNombre());
+            } else if (jugador3.getHp() <= 0) {
+                System.out.println("Gana " + jugador1.getNombre());
+            } else {
+                System.out.println("Gana " + jugador1.getNombre());
+            }
+
+            System.out.println(" ");
+            System.out.println(jugador1.getNombre() + ": " + jugador1.getHp());
+            System.out.println(jugador2.getNombre() + ": " + jugador2.getHp());
+            System.out.println(jugador3.getNombre() + ": " + jugador3.getHp());
+            System.out.println(jugador4.getNombre() + ": " + jugador4.getHp());
+        }
     }
 
     private static Raza1 seleccionarLuchador(int opcion) {
@@ -161,19 +151,17 @@ public class Luchadorinterface {
             case 2 -> {
                 return new Raza1("Thanos", 200, 50, 30, 10);
             }
-            case 3 ->{
-                return new Raza1("Spider man",300,40,60,15);
+            case 3 -> {
+                return new Raza1("Spider man", 300, 40, 60, 15);
             }
-            case 4 ->{
-                return new Raza1("Thor",325,30,43,23);
+            case 4 -> {
+                return new Raza1("Thor", 310, 30, 43, 23);
             }
-            
+
             default -> {
                 System.out.println("Opcion incorrecta, elige nuevamente.");
                 throw new IllegalArgumentException("Opcion incorrecta");
             }
         }
     }
-    }
-    
-
+}

@@ -10,15 +10,15 @@ package luchadorinterface;
  */
 public interface Magrase {
 
-    public int curar();
+    public int curar(Raza1 oponente);
 
-    public int Robovida();
+    public int Robovida(Raza1 oponente);
 
-    public int Ataque();
+    public int Ataque(Raza1 oponente);
 
-    public int Ataquehielo();
+    public int Ataquehielo(Raza1 oponente);
 
-    public int Ataquefuego();
+    public int Ataquefuego(Raza1 oponente);
     
     
 

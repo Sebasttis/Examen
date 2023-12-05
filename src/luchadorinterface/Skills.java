@@ -12,8 +12,9 @@ public interface Skills {
 
     public int Escapar();
 
-    public int Atacar();
+    public int Atacar(Raza1 oponente);
 
-    public int Dobleataque();
+    public int Dobleataque(Raza1 oponente);
+    
 
 }
